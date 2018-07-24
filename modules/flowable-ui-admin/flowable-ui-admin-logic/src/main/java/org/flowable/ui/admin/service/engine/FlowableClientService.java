@@ -526,7 +526,7 @@ public class FlowableClientService {
         // add
 
         try {
-            return new StringEntity(json.toString());
+            return new StringEntity(json.toString(), "UTF-8");
         } catch (Exception e) {
             LOGGER.warn("Error translation json to http client entity {}", json, e);
         }
@@ -535,7 +535,7 @@ public class FlowableClientService {
 
     public StringEntity createStringEntity(String json) {
         try {
-            return new StringEntity(json);
+            return new StringEntity(json,"UTF-8");
         } catch (Exception e) {
             LOGGER.warn("Error translation json to http client entity {}", json, e);
         }
